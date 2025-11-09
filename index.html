@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACEIO - Sistema de Testes</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FACEIO Library -->
+    <script src="https://cdn.faceio.net/fio.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 FACEIO Test System</h1>
+            <p class="subtitle">Sistema de Testes para Reconhecimento Facial</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="label">Status:</span>
+                <span id="status" class="status-text">Aguardando...</span>
+            </div>
+            <div class="status-item">
+                <span class="label">API Key:</span>
+                <span class="api-key">1d87cc...9eb0</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Enrollment Section -->
+            <div class="card">
+                <h2>📸 Cadastro Facial (Enrollment)</h2>
+                <p class="description">Registre um novo usuário através do reconhecimento facial</p>
+
+                <div class="form-group">
+                    <label for="userEmail">Email do Usuário:</label>
+                    <input type="email" id="userEmail" placeholder="usuario@exemplo.com" class="input-field">
+                </div>
+
+                <div class="form-group">
+                    <label for="userName">Nome do Usuário:</label>
+                    <input type="text" id="userName" placeholder="João Silva" class="input-field">
+                </div>
+
+                <button id="enrollBtn" class="btn btn-primary">
+                    <span class="btn-icon">👤</span>
+                    Iniciar Cadastro Facial
+                </button>
+
+                <div id="enrollResult" class="result-box"></div>
+            </div>
+
+            <!-- Authentication Section -->
+            <div class="card">
+                <h2>🔓 Autenticação Facial</h2>
+                <p class="description">Autentique um usuário previamente cadastrado</p>
+
+                <button id="authenticateBtn" class="btn btn-success">
+                    <span class="btn-icon">✓</span>
+                    Iniciar Autenticação
+                </button>
+
+                <div id="authResult" class="result-box"></div>
+            </div>
+
+            <!-- User Data Section -->
+            <div class="card">
+                <h2>📊 Dados do Usuário</h2>
+                <div id="userData" class="user-data-box">
+                    <p class="no-data">Nenhum dado disponível. Realize um cadastro ou autenticação.</p>
+                </div>
+            </div>
+
+            <!-- Logs Section -->
+            <div class="card">
+                <h2>📝 Logs de Eventos</h2>
+                <button id="clearLogsBtn" class="btn btn-small">Limpar Logs</button>
+                <div id="logs" class="logs-box"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Sistema de Testes FACEIO | <a href="https://faceio.net/integration-guide" target="_blank">Documentação</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
